@@ -1,3 +1,6 @@
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+
 public class ProdutoPerecivel extends Produto{
     private static final double DESCONTO =  0.25;
     private static final int PRAZO_DESCONTO = 7;
@@ -5,12 +8,21 @@ public class ProdutoPerecivel extends Produto{
 
     public ProdutoPerecivel(String desc,double precoCusto, double margemLucro, LocalDate validade){
         super(desc,precoCusto, margemLucro);
-        if (validade.isAfeter(LocalDate.now()) || validade.isEqual(LocalDate.now())) {
+        if (validade.isAfter(LocalDate.now())) {
             dataValidade = validade;
         } else {
             throw new IllegalArgumentException("Data de validade deve ser futura.");
         }
     }
 
-  
+    public double valorVenda(){
+        
+        long diasParaValidade = ChronoUnit.DAYS.between(LocalDate.now(), dataValidade);
+        if (diasParaValidade <= PRAZO_DESCONTO) {
+            return super.valorDeVenda() * (1 - DESCONTO);
+        } 
+
+         return super.valorDeVenda();
+        
+    }
 }
