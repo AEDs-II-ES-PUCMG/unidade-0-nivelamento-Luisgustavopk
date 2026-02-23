@@ -1,5 +1,8 @@
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+
+
 
 public class ProdutoPerecivel extends Produto{
     private static final double DESCONTO =  0.25;
@@ -25,5 +28,11 @@ public class ProdutoPerecivel extends Produto{
          return (precoCusto * (1.0 + margemLucro));
         
     }
-    
+
+    @Override
+    public String toString() {
+       DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+    return super.toString() + " - Validade até: " + dataValidade.format(formatter);
+    }
 }
