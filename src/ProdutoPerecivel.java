@@ -16,13 +16,14 @@ public class ProdutoPerecivel extends Produto{
     }
 
     public double valorVenda(){
-        
+
         long diasParaValidade = ChronoUnit.DAYS.between(LocalDate.now(), dataValidade);
         if (diasParaValidade <= PRAZO_DESCONTO) {
-            return super.valorDeVenda() * (1 - DESCONTO);
+           return (precoCusto * (1.0 + margemLucro)) * (1 - DESCONTO);
         } 
 
-         return super.valorDeVenda();
+         return (precoCusto * (1.0 + margemLucro));
         
     }
+    
 }
