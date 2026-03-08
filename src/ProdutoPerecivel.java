@@ -17,6 +17,15 @@ public class ProdutoPerecivel extends Produto{
             throw new IllegalArgumentException("Data de validade deve ser futura.");
         }
     }
+    
+    public ProdutoPerecivel(String desc,double precoCusto, LocalDate validade){
+        super(desc,precoCusto);
+        if (validade.isAfter(LocalDate.now())) {
+            dataValidade = validade;
+        } else {
+            throw new IllegalArgumentException("Data de validade deve ser futura.");
+        }
+    }
 
     public double valorVenda(){
 

@@ -124,4 +124,9 @@ public abstract class Produto {
 
 		return novoProduto;
 	}
+
+	public String getDescricao() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'getDescricao'");
+	}
 }
