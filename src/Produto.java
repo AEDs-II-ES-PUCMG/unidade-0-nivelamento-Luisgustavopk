@@ -77,8 +77,8 @@ public abstract class Produto {
 	*/
 	@Override
 	public boolean equals(Object obj){
-	Produto outro = (Produto)obj;
-	return this.descricao.toLowerCase().equals(outro.descricao.toLowerCase());
+		Produto outro = (Produto)obj;
+		return this.descricao.toLowerCase().equals(outro.descricao.toLowerCase());
 	}
 
 	/**

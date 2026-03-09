@@ -142,7 +142,7 @@ public class App {
 
 		LocalDate validade = null;
 		if (tipo == 2){
-			System.out.print("Digite a data de validade: ");
+			System.out.print("Digite a data de validade (dd/MM/yyyy): ");
 			String dataValidade = teclado.nextLine();
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 			validade = LocalDate.parse(dataValidade, formatter);
@@ -186,7 +186,7 @@ public class App {
 		}
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 				
 		teclado = new Scanner(System.in, Charset.forName("ISO-8859-2"));
 		nomeArquivoDados = "dadosProdutos.csv";
