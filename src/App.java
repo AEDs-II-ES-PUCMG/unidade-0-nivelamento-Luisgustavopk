@@ -187,7 +187,7 @@ public class App {
 	}
 
 	public static void main(String[] args) {
-				// TODO Auto-generated method stub
+				
 		teclado = new Scanner(System.in, Charset.forName("ISO-8859-2"));
 		nomeArquivoDados = "dadosProdutos.csv";
 		produtosCadastrados = lerProdutos(nomeArquivoDados);
